@@ -1,0 +1,57 @@
+snakeBot:
+  # Publish all joint states -----------------------------------
+  # Creates the /joint_states topic necessary in ROS
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Effort Controllers ---------------------------------------
+  RFH_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: RFH
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+    
+  LFV_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFV
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+   
+  LSH_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LSH
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+
+  LSV_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LSV
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+    
+  LTH_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LTH
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+    
+  LTV_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LTV
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+
+  LFrH_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFrH
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+
+  LFrV_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFrV
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+  LFiH_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFiH
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+
+  LFiV_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFiV
+    pid: {p: 5.0, i: 0.0, d: 0.1}
+

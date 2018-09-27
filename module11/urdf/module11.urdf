@@ -1,0 +1,1021 @@
+<robot
+  name="module11">
+
+  <gazebo>
+  	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+  	 <robotNamespace>/snakeBot</robotNamespace>
+  	</plugin>
+  </gazebo>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.059005 0.0084946 -0.088929"
+        rpy="0 0 0" />
+      <mass
+        value="0.021412" />
+      <inertia
+        ixx="4.3038E-06"
+        ixy="-1.5348E-13"
+        ixz="-1.5348E-13"
+        iyy="6.4987E-06"
+        iyz="-1.046E-13"
+        izz="6.4987E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/base_link.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <link
+    name="RFH_l">
+    <inertial>
+      <origin
+        xyz="0.077999 -0.023578 -0.00015631"
+        rpy="0 0 0" />
+      <mass
+        value="0.30422" />
+      <inertia
+        ixx="5.6269E-05"
+        ixy="-6.7565E-07"
+        ixz="6.7565E-07"
+        iyy="0.00013413"
+        iyz="2.7424E-09"
+        izz="0.00013413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/RFH_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 1.53333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/RFH_l.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="RFH"
+    type="revolute">
+    <origin
+      xyz="-0.059004 0.088929 -0.014977"
+      rpy="-1.5708 -9.3675E-15 5.2254E-31" />
+    <parent
+      link="base_link" />
+    <child
+      link="RFH_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="LFV_l">
+    <inertial>
+      <origin
+        xyz="-0.0779979722043294 -0.0236776079502012 0.000156335178566169"
+        rpy="0 0 0" />
+      <mass
+        value="0.304221978677919" />
+      <inertia
+        ixx="5.62694786897269E-05"
+        ixy="6.75651857950694E-07"
+        ixz="6.7565185795328E-07"
+        iyy="0.000134127952334618"
+        iyz="-2.74236051781009E-09"
+        izz="0.000134127952333357" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFV_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFV_l.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="LFV"
+    type="revolute">
+    <origin
+      xyz="-0.059007 0.1124 0.0084946"
+      rpy="-9.6992E-16 -3.9732E-30 -4.0964E-15" />
+    <parent
+      link="base_link" />
+    <child
+      link="LFV_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="LSH_l">
+    <inertial>
+      <origin
+        xyz="0.0114555925083545 -0.0234712962874002 -2.12958224526938E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0107059304937677" />
+      <inertia
+        ixx="2.15188774273762E-06"
+        ixy="-1.56478029206162E-15"
+        ixz="9.4691369143502E-14"
+        iyy="2.85579568809868E-06"
+        iyz="-5.22989237496864E-14"
+        izz="8.32007948664844E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LSH_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LSH_l.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="LSH"
+    type="revolute">
+    <origin
+      xyz="-0.156 -0.023521 -0.023521"
+      rpy="-1.5708 7.2303E-15 4.0964E-15" />
+    <parent
+      link="LFV_l" />
+    <child
+      link="LSH_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="g34">
+    <inertial>
+      <origin
+        xyz="0.00119765481791683 -0.0113948534860407 1.04778519194326E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0107059304937677" />
+      <inertia
+        ixx="8.46429365420271E-07"
+        ixy="-1.3720990968646E-07"
+        ixz="5.21759866212367E-14"
+        iyy="2.1374663259822E-06"
+        iyz="3.91053813205472E-15"
+        izz="2.85579568809868E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/g34.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/g34.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="g34_j"
+    type="fixed">
+    <origin
+      xyz="0 -0.023471 0"
+      rpy="4.2329E-15 -6.6166E-16 -1.6755" />
+    <parent
+      link="LSH_l" />
+    <child
+      link="g34" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LSV_l">
+    <inertial>
+      <origin
+        xyz="-0.0779985344590596 -0.0236776004065372 0.000156314754069888"
+        rpy="0 0 0" />
+      <mass
+        value="0.304221978677919" />
+      <inertia
+        ixx="5.62694786903201E-05"
+        ixy="6.75651857952483E-07"
+        ixz="6.75651857953286E-07"
+        iyy="0.000134127952334618"
+        iyz="-2.74236051781309E-09"
+        izz="0.00013412795233395" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LSV_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LSV_l.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="LSV"
+    type="revolute">
+    <origin
+      xyz="0 0 0.023471"
+      rpy="1.5708 -1.3551E-15 1.6755" />
+    <parent
+      link="g34" />
+    <child
+      link="LSV_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="LTH_l">
+    <inertial>
+      <origin
+        xyz="0.0114555925083546 -0.0234712962874001 -2.12958225359605E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0107059304937677" />
+      <inertia
+        ixx="2.15188774273763E-06"
+        ixy="-1.5647834071692E-15"
+        ixz="9.46913654395446E-14"
+        iyy="2.85579568809869E-06"
+        iyz="-5.22989226463604E-14"
+        izz="8.32007948664844E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LTH_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LTH_l.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="LTH"
+    type="revolute">
+    <origin
+      xyz="-0.156 -0.023521 -0.023521"
+      rpy="-1.5708 0 -5.4956E-15" />
+    <parent
+      link="LSV_l" />
+    <child
+      link="LTH_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="g56">
+    <inertial>
+      <origin
+        xyz="0.00119765481791682 -0.0113948534860406 1.04778533072114E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0107059304937677" />
+      <inertia
+        ixx="8.46429365420271E-07"
+        ixy="-1.37209909686459E-07"
+        ixz="5.21759862676282E-14"
+        iyy="2.1374663259822E-06"
+        iyz="3.91053819712919E-15"
+        izz="2.85579568809868E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/g56.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/g56.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="g56_j"
+    type="fixed">
+    <origin
+      xyz="0 -0.023471 0"
+      rpy="4.1633E-15 2.3173E-30 -1.6755" />
+    <parent
+      link="LTH_l" />
+    <child
+      link="g56" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LTV_l">
+    <inertial>
+      <origin
+        xyz="-0.0779985344590596 -0.0236776004065368 0.000156314754069535"
+        rpy="0 0 0" />
+      <mass
+        value="0.304221978677919" />
+      <inertia
+        ixx="5.62694786890914E-05"
+        ixy="6.75651857951529E-07"
+        ixz="6.75651857952834E-07"
+        iyy="0.000134127952334057"
+        iyz="-2.74236051781147E-09"
+        izz="0.000134127952333282" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LTV_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LTV_l.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="LTV"
+    type="revolute">
+    <origin
+      xyz="0 0 0.023471"
+      rpy="1.5708 -1.4106E-15 1.6755" />
+    <parent
+      link="g56" />
+    <child
+      link="LTV_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="LFrH_l">
+    <inertial>
+      <origin
+        xyz="0.0114555925083547 -0.0234712962874001 -2.12958225498383E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0107059304937677" />
+      <inertia
+        ixx="2.15188774273763E-06"
+        ixy="-1.56478410712483E-15"
+        ixz="9.46913632118764E-14"
+        iyy="2.85579568809869E-06"
+        iyz="-5.22989209114182E-14"
+        izz="8.32007948664845E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFrH_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFrH_l.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.5</mu>
+            <mu2>1.5</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="LFrH"
+    type="revolute">
+    <origin
+      xyz="-0.156 -0.023521 -0.023521"
+      rpy="-1.5708 0 -5.5511E-15" />
+    <parent
+      link="LTV_l" />
+    <child
+      link="LFrH_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="g78">
+    <inertial>
+      <origin
+        xyz="0.00119765481791685 -0.0113948534860407 1.04778533072114E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0107059304937677" />
+      <inertia
+        ixx="8.46429365420271E-07"
+        ixy="-1.37209909686457E-07"
+        ixz="5.2175986324766E-14"
+        iyy="2.13746632598221E-06"
+        iyz="3.91053802028583E-15"
+        izz="2.85579568809869E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/g78.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/g78.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g78_j"
+    type="fixed">
+    <origin
+      xyz="0 -0.023471 0"
+      rpy="5.5511E-15 2.1398E-29 -1.6755" />
+    <parent
+      link="LFrH_l" />
+    <child
+      link="g78" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LFrV_l">
+    <inertial>
+      <origin
+        xyz="-0.0779985344590599 -0.0236776004065368 0.000156314754069718"
+        rpy="0 0 0" />
+      <mass
+        value="0.304221978677919" />
+      <inertia
+        ixx="5.62694786891652E-05"
+        ixy="6.75651857951406E-07"
+        ixz="6.75651857952917E-07"
+        iyy="0.000134127952334056"
+        iyz="-2.74236051783236E-09"
+        izz="0.000134127952333357" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFrV_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFrV_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LFrV"
+    type="revolute">
+    <origin
+      xyz="0 0 0.023471"
+      rpy="1.5708 2.5101E-17 1.6755" />
+    <parent
+      link="g78" />
+    <child
+      link="LFrV_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="LFiH_l">
+    <inertial>
+      <origin
+        xyz="0.0114555925083546 -0.0234712962874001 -2.12958224804494E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0107059304937677" />
+      <inertia
+        ixx="2.15188774273765E-06"
+        ixy="-1.56478330056279E-15"
+        ixz="9.46913737340036E-14"
+        iyy="2.85579568809871E-06"
+        iyz="-5.2298921720452E-14"
+        izz="8.32007948664847E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFiH_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFiH_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LFiH"
+    type="revolute">
+    <origin
+      xyz="-0.156 -0.023521 -0.023521"
+      rpy="-1.5708 0 -5.4956E-15" />
+    <parent
+      link="LFrV_l" />
+    <child
+      link="LFiH_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="g910">
+    <inertial>
+      <origin
+        xyz="0.00119765481791681 -0.0113948534860406 1.04778533072114E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0107059304937677" />
+      <inertia
+        ixx="8.46429365420273E-07"
+        ixy="-1.37209909686459E-07"
+        ixz="5.2175987246576E-14"
+        iyy="2.13746632598221E-06"
+        iyz="3.91053752498928E-15"
+        izz="2.8557956880987E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/g910.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/g910.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g910_j"
+    type="fixed">
+    <origin
+      xyz="0 -0.023471 0"
+      rpy="6.9389E-15 -3.5696E-29 -1.6755" />
+    <parent
+      link="LFiH_l" />
+    <child
+      link="g910" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LFiV_l">
+    <inertial>
+      <origin
+        xyz="-0.0779985344590592 -0.0236776004065341 0.000156314754065971"
+        rpy="0 0 0" />
+      <mass
+        value="0.304221978677919" />
+      <inertia
+        ixx="5.62694786896529E-05"
+        ixy="6.75651857951793E-07"
+        ixz="6.75651857953292E-07"
+        iyy="0.000134127952334618"
+        iyz="-2.74236051783857E-09"
+        izz="0.000134127952333283" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFiV_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://module11/meshes/LFiV_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LFiV"
+    type="revolute">
+    <origin
+      xyz="0 0 0.023471"
+      rpy="1.5708 -2.0919E-15 1.6755" />
+    <parent
+      link="g910" />
+    <child
+      link="LFiV_l" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+   <transmission name="RFH_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="RFH">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="RFHMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="LFVtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LFV">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LFVMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="LSHtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LSH">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LSHMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="LSVtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LSV">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LSVMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+   <transmission name="RTHtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LTH">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LTHMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="LTVtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LTV">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LTVMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission><transmission name="LFrHtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LFrH">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LFrHMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="LFrVtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LFrV">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LFrVMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="LFiHtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LFiH">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LFiHMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+</transmission>
+ <transmission name="LFiVtrans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="LFiV">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="LFiVMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    
+</robot>

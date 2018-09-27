@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+<!-- Load the TortoiseBot URDF model into the parameter server -->
+
+<param name="robot_description" textfile="$(find module11)/urdf/module11.urdf" />
+
+<rosparam file="$(find module11)/config/joint_names_module11.yaml" command="load" />
+
+<!-- Start Gazebo with an empty world -->
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find module11)/world/pole.world"/>
+    <!-- more default parameters can be changed here -->
+  </include>
+	
+<!-- Spawn a TortoiseBot in Gazebo, taking the description from the
+parameter server -->
+
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+      args="-param robot_description -urdf -model snakeBot" />
+<node name="robot_state_publisher" pkg="robot_state_publisher"
+        type="robot_state_publisher"/>
+
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="--namespace=/snakeBot
+                              joint_state_controller
+                              RFH_position_controller
+                              LFV_position_controller
+                              LSH_position_controller
+                              LSV_position_controller
+                              LTH_position_controller
+                              LTV_position_controller
+                              LFrH_position_controller
+                              LFrV_position_controller
+                              LFiH_position_controller
+                              LFiV_position_controller
+                              --shutdown-timeout 3">
+</node>
+</launch>
